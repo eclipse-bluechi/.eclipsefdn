@@ -118,5 +118,34 @@ orgs.newOrg('eclipse-bluechi') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('terraform-provider-bluechi') {
+      allow_update_branch: false,
+      description: "Terraform provider for setting up systems with BlueChi",
+      has_projects: false,
+      has_wiki: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      squash_merge_commit_title: "PR_TITLE",
+      topics+: [
+        "terraform",
+        "terraform-provider",
+        "bluechi"
+      ],
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "rpmbuild",
+            "test"
+          ],
+          requires_conversation_resolution: true,
+          requires_linear_history: true,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
   ],
 }
