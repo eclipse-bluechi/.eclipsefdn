@@ -137,10 +137,7 @@ orgs.newOrg('eclipse-bluechi') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks+: [
-            "rpmbuild",
-            "test"
-          ],
+          required_status_checks+: [],
           requires_conversation_resolution: true,
           requires_linear_history: true,
           requires_strict_status_checks: true,
