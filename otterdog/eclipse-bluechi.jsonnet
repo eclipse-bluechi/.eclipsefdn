@@ -79,6 +79,9 @@ orgs.newOrg('eclipse-bluechi') {
         orgs.newRepoSecret('PYPI_API_TOKEN') {
           value: "********",
         },
+        orgs.newRepoSecret('QUAY_BOT_API_TOKEN') {
+          value: "pass:bots/automotive.bluechi/quay.io/api-token",
+        },
       ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
