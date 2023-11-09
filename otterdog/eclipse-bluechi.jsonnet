@@ -9,7 +9,6 @@ orgs.newOrg('eclipse-bluechi') {
     packages_containers_internal: false,
     packages_containers_public: false,
     readers_can_create_discussions: true,
-    two_factor_requirement: true,
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
