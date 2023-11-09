@@ -72,12 +72,6 @@ orgs.newOrg('eclipse-bluechi') {
             "push"
           ],
         },
-        orgs.newRepoWebhook('https://copr.fedorainfracloud.org/webhooks/github/102833/ac79d20a-773d-40cd-b6a2-2d1c4df747b2/') {
-          content_type: "json",
-          events+: [
-            "push"
-          ],
-        },
       ],
       secrets: [
         orgs.newRepoSecret('GH_RELEASE_TOKEN') {
