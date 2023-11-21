@@ -49,11 +49,6 @@ orgs.newOrg('eclipse-bluechi') {
             "push"
           ],
         },
-        orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/hirte/237871/') {
-          events+: [
-            "push"
-          ],
-        },
         orgs.newRepoWebhook('https://$token:9Z6454N86GYYWDEX9NWUM4IIRIPLNZFDUJL7Y065NJUAF8BXTTEF68R6RHQ21OYL@quay.io/webhooks/push/trigger/55ae23b1-a5d6-44e3-98f7-82f660ce0225') {
           content_type: "json",
           events+: [
@@ -66,10 +61,14 @@ orgs.newOrg('eclipse-bluechi') {
             "push"
           ],
         },
-        orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/bluechi/247263/') {
+        orgs.newRepoWebhook('https://readthedocs.org/api/v2/webhook/bluechi/254760/') {
           events+: [
+            "create",
+            "delete",
+            "pull_request",
             "push"
           ],
+          secret: "********",
         },
       ],
       secrets: [
