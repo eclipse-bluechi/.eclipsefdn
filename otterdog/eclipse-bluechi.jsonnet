@@ -17,7 +17,7 @@ orgs.newOrg('eclipse-bluechi') {
   _repositories+:: [
     orgs.newRepo('bluechi') {
       allow_update_branch: false,
-      description: "Bluechi is a systemd service controller intended for multi-node environments with a predefined number of nodes and with a focus on highly regulated ecosystems such as those requiring functional safety.",
+      description: "Eclipse BlueChi is a systemd service controller intended for multi-node environments with a predefined number of nodes and with a focus on highly regulated ecosystems such as those requiring functional safety.",
       has_projects: false,
       has_wiki: false,
       homepage: "https://bluechi.readthedocs.io/en/latest/",
