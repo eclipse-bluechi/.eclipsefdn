@@ -140,5 +140,30 @@ orgs.newOrg('eclipse-bluechi') {
         },
       ],
     },
+    orgs.newRepo('bluechi-on-yocto') {
+      allow_update_branch: false,
+      description: "Yocto recipe for BlueChi including a basic single-node configuration",
+      has_projects: false,
+      has_wiki: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      squash_merge_commit_title: "PR_TITLE",
+      topics+: [
+        "bluechi",
+        "yocto"
+      ],
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [],
+          requires_conversation_resolution: true,
+          requires_linear_history: true,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
   ],
 }
