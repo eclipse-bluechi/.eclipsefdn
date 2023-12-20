@@ -165,5 +165,30 @@ orgs.newOrg('eclipse-bluechi') {
         },
       ],
     },
+    orgs.newRepo('bluechi-ansible-collection') {
+      allow_update_branch: false,
+      description: "Ansible collection for installing BlueChi controller and agents",
+      has_projects: false,
+      has_wiki: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      squash_merge_commit_title: "PR_TITLE",
+      topics+: [
+        "bluechi",
+        "ansible"
+      ],
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [],
+          requires_conversation_resolution: true,
+          requires_linear_history: true,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
   ],
 }
