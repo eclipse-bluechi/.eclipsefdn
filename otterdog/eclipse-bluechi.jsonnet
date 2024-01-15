@@ -13,6 +13,11 @@ orgs.newOrg('eclipse-bluechi') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('ANSIBLE_GALAXY_API_TOKEN') {
+      value: "pass:bots/automotive.bluechi/galaxy.ansible.com/api-token",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('bluechi') {
       allow_update_branch: false,
