@@ -9,9 +9,6 @@ orgs.newOrg('eclipse-bluechi') {
     packages_containers_public: false,
     readers_can_create_discussions: true,
     web_commit_signoff_required: false,
-    workflows+: {
-      actions_can_approve_pull_request_reviews: true,
-    },
   },
   secrets+: [
     orgs.newOrgSecret('ANSIBLE_GALAXY_API_TOKEN') {
@@ -181,9 +178,6 @@ orgs.newOrg('eclipse-bluechi') {
         "bluechi",
         "ansible"
       ],
-      workflows+: {
-        actions_can_approve_pull_request_reviews: true,
-      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
