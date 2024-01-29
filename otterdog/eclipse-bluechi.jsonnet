@@ -10,7 +10,7 @@ orgs.newOrg('eclipse-bluechi') {
     readers_can_create_discussions: true,
     web_commit_signoff_required: false,
     workflows+: {
-      actions_can_approve_pull_request_reviews: false,
+      actions_can_approve_pull_request_reviews: true,
     },
   },
   secrets+: [
@@ -182,7 +182,7 @@ orgs.newOrg('eclipse-bluechi') {
         "ansible"
       ],
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
+        actions_can_approve_pull_request_reviews: true,
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
