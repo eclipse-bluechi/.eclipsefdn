@@ -33,9 +33,6 @@ orgs.newOrg('eclipse-bluechi') {
         "services",
         "systemd"
       ],
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
       webhooks: [
         orgs.newRepoWebhook('https://apps.fedoraproject.org/github2fedmsg/webhook') {
           content_type: "json",
@@ -111,9 +108,6 @@ orgs.newOrg('eclipse-bluechi') {
       has_projects: false,
       has_wiki: false,
       web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
     },
     orgs.newRepo('terraform-provider-bluechi') {
       allow_update_branch: false,
