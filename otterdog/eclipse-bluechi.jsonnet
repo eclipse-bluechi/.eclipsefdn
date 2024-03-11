@@ -99,36 +99,21 @@ orgs.newOrg('eclipse-bluechi') {
         },
       ],
     },
-    orgs.newRepo('hashmap.c') {
-      default_branch: "master",
-      allow_merge_commit: true,
+    orgs.newRepo('bluechi-ansible-collection') {
       allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "hashmap.c",
-      has_projects: false,
-      has_wiki: false,
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('terraform-provider-bluechi') {
-      allow_update_branch: false,
-      description: "Terraform provider for setting up systems with BlueChi",
+      description: "Ansible collection for installing BlueChi controller and agents",
       has_projects: false,
       has_wiki: false,
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       squash_merge_commit_title: "PR_TITLE",
       topics+: [
-        "terraform",
-        "terraform-provider",
+        "ansible",
         "bluechi"
       ],
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks+: [],
           requires_conversation_resolution: true,
           requires_linear_history: true,
           requires_strict_status_checks: true,
@@ -153,16 +138,25 @@ orgs.newOrg('eclipse-bluechi') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks+: [],
           requires_conversation_resolution: true,
           requires_linear_history: true,
           requires_strict_status_checks: true,
         },
       ],
     },
-    orgs.newRepo('bluechi-ansible-collection') {
+    orgs.newRepo('hashmap.c') {
+      allow_merge_commit: true,
       allow_update_branch: false,
-      description: "Ansible collection for installing BlueChi controller and agents",
+      default_branch: "master",
+      delete_branch_on_merge: false,
+      description: "hashmap.c",
+      has_projects: false,
+      has_wiki: false,
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('terraform-provider-bluechi') {
+      allow_update_branch: false,
+      description: "Terraform provider for setting up systems with BlueChi",
       has_projects: false,
       has_wiki: false,
       secret_scanning: "disabled",
@@ -170,12 +164,15 @@ orgs.newOrg('eclipse-bluechi') {
       squash_merge_commit_title: "PR_TITLE",
       topics+: [
         "bluechi",
-        "ansible"
+        "terraform",
+        "terraform-provider"
       ],
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks+: [],
           requires_conversation_resolution: true,
           requires_linear_history: true,
           requires_strict_status_checks: true,
