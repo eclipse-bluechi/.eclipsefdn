@@ -2,4 +2,4 @@
 *             @eclipse-bluechi/eclipsefdn-releng
 
 # Otterdog related configurations are also owned by the security team.
-/otterdog/**  @eclipse-bluechi/eclipsefdn-security @eclipse-bluechi/eclipsefdn-releng
+/otterdog/**  @eclipse-bluechi/eclipsefdn-security
