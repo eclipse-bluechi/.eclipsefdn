@@ -78,6 +78,9 @@ orgs.newOrg('eclipse-bluechi') {
         orgs.newRepoSecret('QUAY_BOT_API_TOKEN') {
           value: "pass:bots/automotive.bluechi/quay.io/api-token",
         },
+        orgs.newRepoSecret('TESTING_FARM_API_TOKEN') {
+          value: "pass:bots/automotive.bluechi/github.com/testing-farm-token",
+        },
       ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
