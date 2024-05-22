@@ -21,8 +21,6 @@ orgs.newOrg('eclipse-bluechi') {
       has_projects: false,
       has_wiki: false,
       homepage: "https://bluechi.readthedocs.io/en/latest/",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       squash_merge_commit_title: "PR_TITLE",
       topics+: [
         "containers",
@@ -106,8 +104,6 @@ orgs.newOrg('eclipse-bluechi') {
       description: "Ansible collection for installing BlueChi controller and agents",
       has_projects: false,
       has_wiki: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       squash_merge_commit_title: "PR_TITLE",
       topics+: [
         "ansible",
@@ -127,8 +123,6 @@ orgs.newOrg('eclipse-bluechi') {
       description: "Yocto recipe for BlueChi including a basic single-node configuration",
       has_projects: false,
       has_wiki: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       squash_merge_commit_title: "PR_TITLE",
       topics+: [
         "bluechi",
@@ -161,8 +155,6 @@ orgs.newOrg('eclipse-bluechi') {
       description: "Terraform provider for setting up systems with BlueChi",
       has_projects: false,
       has_wiki: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       squash_merge_commit_title: "PR_TITLE",
       topics+: [
         "bluechi",
