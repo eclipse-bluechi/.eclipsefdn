@@ -98,6 +98,29 @@ orgs.newOrg('eclipse-bluechi') {
         },
       ],
     },
+    orgs.newRepo('bluechi-ppa') {
+      allow_update_branch: false,
+      description: "PPA repository for BlueChi's .deb packages",
+      has_projects: false,
+      has_wiki: false,
+      homepage: "https://bluechi.readthedocs.io/en/latest/",
+      topics+: [
+        "containers",
+        "controller",
+        "linux",
+        "podman",
+        "services",
+        "systemd"
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_conversation_resolution: true,
+          requires_linear_history: true,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
     orgs.newRepo('bluechi-ansible-collection') {
       allow_update_branch: false,
       description: "Ansible collection for installing BlueChi controller and agents",
