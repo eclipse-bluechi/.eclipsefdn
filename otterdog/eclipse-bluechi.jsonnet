@@ -121,6 +121,26 @@ orgs.newOrg('eclipse-bluechi') {
         },
       ],
     },
+    orgs.newRepo('bluechi-demos') {
+      allow_update_branch: false,
+      description: "Demos for BlueChi and its tooling",
+      has_projects: false,
+      has_wiki: false,
+      homepage: "https://bluechi.readthedocs.io/en/latest/",
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_conversation_resolution: true,
+          requires_linear_history: true,
+          requires_strict_status_checks: true,
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('QUAY_BOT_API_TOKEN') {
+          value: "pass:bots/automotive.bluechi/quay.io/api-token",
+        },
+      ],
+    },
     orgs.newRepo('bluechi-ansible-collection') {
       allow_update_branch: false,
       description: "Ansible collection for installing BlueChi controller and agents",
