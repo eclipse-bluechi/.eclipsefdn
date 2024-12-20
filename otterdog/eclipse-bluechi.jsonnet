@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-bluechi') {
+orgs.newOrg('automotive.bluechi', 'eclipse-bluechi') {
   settings+: {
     description: "",
     name: "Eclipse Bluechi project",
