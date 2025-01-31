@@ -96,6 +96,12 @@ orgs.newOrg('automotive.bluechi', 'eclipse-bluechi') {
           requires_linear_history: true,
           requires_strict_status_checks: true,
         },
+        orgs.newBranchProtectionRule('bluechi*') {
+          required_approving_review_count: 1,
+          requires_conversation_resolution: true,
+          requires_linear_history: true,
+          requires_strict_status_checks: true,
+        },
       ],
     },
     orgs.newRepo('bluechi-ppa') {
