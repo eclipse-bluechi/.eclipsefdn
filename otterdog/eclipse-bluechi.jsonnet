@@ -13,6 +13,15 @@ orgs.newOrg('automotive.bluechi', 'eclipse-bluechi') {
       value: "pass:bots/automotive.bluechi/galaxy.ansible.com/api-token",
     },
   ],
+  webhooks+: [
+    orgs.newOrgWebhook('https://webhook.fedoraproject.org/api/v1/messages/f424028a') {
+      content_type: "json",
+      events+: [
+        "*"
+      ],
+      secret: "pass:bots/automotive.bluechi/fedoraproject.org/webhook-secret",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('bluechi') {
       allow_update_branch: false,
@@ -30,13 +39,6 @@ orgs.newOrg('automotive.bluechi', 'eclipse-bluechi') {
         "systemd"
       ],
       webhooks: [
-        orgs.newRepoWebhook('https://apps.fedoraproject.org/github2fedmsg/webhook') {
-          content_type: "json",
-          events+: [
-            "*"
-          ],
-          secret: "********",
-        },
         orgs.newRepoWebhook('https://copr.fedorainfracloud.org/webhooks/github/82383/cc6b5f40-adf7-4168-a023-b500bfb8281a/') {
           content_type: "json",
           events+: [
