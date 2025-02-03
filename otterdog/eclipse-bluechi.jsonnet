@@ -19,7 +19,7 @@ orgs.newOrg('automotive.bluechi', 'eclipse-bluechi') {
       events+: [
         "*"
       ],
-      secret: "********",
+      secret: "pass:bots/automotive.bluechi/fedoraproject.org/webhook-secret",
     },
   ],
   _repositories+:: [
