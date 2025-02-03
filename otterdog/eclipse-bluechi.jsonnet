@@ -14,7 +14,7 @@ orgs.newOrg('automotive.bluechi', 'eclipse-bluechi') {
     },
   ],
   webhooks+: [
-    orgs.newRepoWebhook('https://webhook.fedoraproject.org/api/v1/messages/f424028a') {
+    orgs.newOrgWebhook('https://webhook.fedoraproject.org/api/v1/messages/f424028a') {
       content_type: "json",
       events+: [
         "*"
